@@ -23,9 +23,9 @@ function calc(in_str: string): number {
          if (mul_div.includes(in_str[i]) == true) {
             if (operator != '') {
                left = combine(left, operator, right);
-            } else {
-               operator = in_str[i];
+               right = '';
             }
+            operator = in_str[i];
          } else {
             if (operator == '') {
                left += in_str[i];
@@ -60,5 +60,6 @@ function calc(in_str: string): number {
 
 console.log(calc('3+5*3-4*4'));
 console.log(calc('3*5*3/4'));
-console.log(calc('3+5-3-4+4'));
-console.log(calc('3+5*3-4*4'));
+console.log(calc('3+5*3/4+4'));
+console.log(calc('3*2+5*3-40/4'));
+console.log(calc('3*2*9+5*3/2-40/4*34'));
